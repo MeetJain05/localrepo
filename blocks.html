@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Website with Background Video and Regions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 0;
+            height: 100vh;
+        }
+
+        /* Define a class for each region */
+        .region {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 36px;
+            position: relative;
+        }
+
+        /* Define a class for square boxes */
+        .square {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Apply specific styles to each region */
+        #region1 { background-color: #ff5733; }
+        #region2 { background-color: #33ff57; }
+        #region3 { background-color: #5733ff; }
+        #region4 { background-color: #ff33c2; }
+
+        /* Style for the background video */
+        .video-container {
+            position: relative;
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+
+        .video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text content for the regions */
+        #region1 .content { z-index: 1; }
+        #region2 .content { z-index: 1; }
+        #region3 .content { z-index: 1; }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <div class="video-container">
+        <video class="video" autoplay muted loop>
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Region 1 -->
+    <div class="region" id="region1">
+        <div class="content">
+            <h1>Region 1</h1>
+            <p>This is some sample text for Region 1.</p>
+        </div>
+    </div>
+
+    <!-- Region 2 -->
+    <div class="region" id="region2">
+        <div class="content">
+            <h1>Region 2</h1>
+            <p>This is some sample text for Region 2.</p>
+        </div>
+    </div>
+
+    <!-- Region 3 -->
+    <div class="region" id="region3">
+        <div class="content">
+            <h1>Region 3</h1>
+            <p>This is some sample text for Region 3.</p>
+        </div>
+    </div>
+
+    <!-- Region 4 -->
+    <div class="region" id="region4">
+        <div class="square">Region 4</div>
+    </div>
+</body>
+</html>
